@@ -65,7 +65,7 @@ def deploy():
     code_dir = '/home/suitmedia/ivan/mysite'
     with settings(warn_only=True):
         if run("test -d %s" % code_dir).failed:
-            run("git@github.com:ivanelian/mysite.git %s" % code_dir)
+            run("git clone git@github.com:ivanelian/mysite.git %s" % code_dir)
     with cd(code_dir):
         run("git pull")
         run("cd mysite")
